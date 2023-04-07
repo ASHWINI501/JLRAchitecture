@@ -2,7 +2,6 @@ package com.pocproject.architecture.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -42,22 +41,9 @@ class LoginActivity : AppCompatActivity() {
                 val snackbar = Snackbar
                     .make(
                         binding.layout,
-                        "Please enter valid user name and password",
+                        getString(R.string.login_screen_error_message),
                         Snackbar.LENGTH_LONG
                     )
-                    .setAction(
-                        "Retry"
-                    )  // If the Retry button is pressed, show the message using Toast
-                    {
-                        Toast
-                            .makeText(
-                                this@LoginActivity,
-                                "Retry Clicked",
-                                Toast.LENGTH_SHORT
-                            )
-                            .show()
-                    }
-
                 snackbar.show()
             }
 
