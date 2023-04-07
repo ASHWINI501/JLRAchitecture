@@ -1,9 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Login.LoginActivity">
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.pocproject.architecture.login.ui.viewmodel.LoginViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/login_page_margin_start"
+        android:layout_marginEnd="@dimen/login_page_margin_end"
+        tools:context=".login.LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/login_company_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_textview_margin_top"
+            android:text="@string/company_name"
+            android:textSize="@dimen/login_textview_text_size"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_tagline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_tagline"
+            android:textSize="@dimen/login_page_tagline_text_size"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/montserrat_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_company_name_title" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/login_page_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_page_image_margin_top"
+            android:background="@drawable/corporate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_tagline_title" />
+
+        <EditText
+            android:id="@+id/login_username_edit_text"
+            android:layout_width="@dimen/login_page_width"
+            android:layout_height="@dimen/login_edit_text_height"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textSize="@dimen/login_edit_text_size"
+            android:paddingLeft="@dimen/login_edit_text_view_padding"
+            android:hint="@string/login_username_hint"
+            android:textColor="@color/colorText"
+            android:background="@drawable/bg_txt_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/login_password_edit_text"
+            android:layout_width="@dimen/login_page_width"
+            android:layout_height="@dimen/login_edit_text_height"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textSize="@dimen/login_edit_text_size"
+            android:paddingLeft="@dimen/login_edit_text_view_padding"
+            android:hint="@string/login_password_hint"
+            android:textColor="@color/colorText"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_txt_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_username_edit_text" />
+
+        <TextView
+            android:id="@+id/forgot_password_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_forgot_password"
+            android:textSize="@dimen/login_forgot_password_text_size"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/montserrat_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password_edit_text" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="@dimen/login_btn_image_view_width"
+            android:layout_height="@dimen/login_btn_image_view_height"
+            android:layout_marginTop="@dimen/login_btn_image_margin_top"
+            android:background="@drawable/arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="slideUp"
+            app:layout_constraintHorizontal_bias="0.951"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password_title" />
+
+        <TextView
+            android:id="@+id/login_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_textview_margin_top"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/login_btn_title"
+            android:textSize="@dimen/login_btn_title_text_size"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toStartOf="@+id/login_btn"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password_title" />
+
+        <TextView
+            android:id="@+id/not_account_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/login_not_account_title_margin_top"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/login_not_account_title"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

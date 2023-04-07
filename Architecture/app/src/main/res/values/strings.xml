@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Architecture</string>
+    <string name="company_name">Jaguar Land Rover</string>
+    <string name="company_tagline">Live the exceptional with soul</string>
+    <string name="login_not_account_title">Don\'t you have an account? Create</string>
+    <string name="login_btn_title">Log in</string>
+    <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_username_hint">Username</string>
+    <string name="home_screen_title">Welcome</string>
 </resources>

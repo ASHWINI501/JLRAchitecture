@@ -1,12 +1,14 @@
-package com.pocproject.architecture.Login
+package com.pocproject.architecture.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pocproject.architecture.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class LoginActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_home)
     }
 }
