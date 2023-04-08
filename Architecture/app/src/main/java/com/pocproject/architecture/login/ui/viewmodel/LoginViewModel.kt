@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.pocproject.architecture.login.di.repository.UserRepository
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val userRepository: UserRepository)  : ViewModel() {
+class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     private val _loginSuccess = MutableLiveData<Boolean>()
     val loginSuccess: LiveData<Boolean> = _loginSuccess
@@ -18,5 +18,4 @@ class LoginViewModel(private val userRepository: UserRepository)  : ViewModel() 
             _loginSuccess.postValue(success)
         }
     }
-
 }

@@ -10,7 +10,7 @@ class UserRepository {
         User("user@gmail.com", "user"),
     )
 
-    suspend fun loginUser(email : String, password: String): Boolean {
+    suspend fun loginUser(email : String,password: String): Boolean {
         // Simulate a network delay
         delay(1000)
 
