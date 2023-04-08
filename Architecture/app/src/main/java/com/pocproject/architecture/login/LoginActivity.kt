@@ -2,6 +2,8 @@ package com.pocproject.architecture.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -47,6 +49,13 @@ class LoginActivity : AppCompatActivity() {
                 snackbar.show()
             }
 
+        }
+        loginViewModel.isLoading.observe(this) { isLoading ->
+            if (isLoading) {
+                binding.loader.visibility = VISIBLE
+            } else {
+                binding.loader.visibility = GONE
+            }
         }
 
         // Set up login button click listener
